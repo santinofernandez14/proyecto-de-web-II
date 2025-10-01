@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito</title>
+  <link rel="stylesheet" href="/css/estilo.css">
+  <link rel="stylesheet" href="/css/carrito.css">
+  <link rel="shortcut icon" href="/imagenes/imagen4.webp">
+  <script src="/JavaScript/carrito.js" defer></script>
+  <script src="/JavaScript/cart.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/"><img src="/imagenes/img1.jpg" id="logo" alt="Logo"></a>
+      <div>
+        <a href="/cart"><img id="carrito-compras" src="/imagenes/img2.jpg" alt="Carrito de compras"><span id="cantidadCarrito" class="cantidad-Carrito">0</span></a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <p id="carrito-vacio">Ups! no hay productos en el carrito <a href="/">Agrega algunos</a></p>
+    <section id="productos-container">
+      <% productos.forEach(producto => { %>
+        <div class="producto">
+          <h4><%= producto.title %></h4>
+          <p>Precio: $<%= producto.price %></p>
+        </div>
+      <% }) %>
+    </section>
+    <section id="totales">
+      <p>Total unidades: <span id="unidades">0</span></p>
+      <p>Total precio: $<span id="precio">0</span></p>
+      <button id="comprar">Comprar</button>
+      <button id="reiniciar">Reiniciar Carrito</button>
+    </section>
+  </main>
+  <footer>
+    <p>Hecho por Santino Fernandez</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/estiloindex.css">
+    <link rel="shortcut icon" href="./imagenes/imagen5.png">
+    <script src="./JavaScript/app.js" defer></script>
+    <script src="./JavaScript/cart.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/"><img src="./imagenes/img1.jpg" id="logo" alt="Logo"></a>
+            <div>
+                <a href="/cart"><img id="carrito-compras" src="./imagenes/img2.jpg" alt="Carrito de compras"><span id="cantidadCarrito" class="cantidad-Carrito">0</span></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="productos-container">
+            <% productos.forEach(producto => { %>
+                <% const cadena = producto.description.slice(0, 20) + '...'; %>
+                <div class="tarjeta-producto" id="tarjeta-producto">
+                    <img src="<%= producto.image %>" alt="">
+                    <h4><%= producto.title %></h4>
+                    <p><%= producto.category %></p>
+                    <p class="a" data-full-description="<%= producto.description %>"><%= cadena %></p>
+                    <% if (producto.descuento) { %>
+                        <p class="descuento"><strong><%= producto.descuento %> off</strong></p>
+                        <p class="precio"><strike>$<%= producto.price %></strike></p>
+                        <p>$<%= (producto.price * (1 - producto.descuento / 100)).toFixed(2) %></p>
+                    <% } else { %>
+                        <p class="precio">$<%= producto.price %></p>
+                    <% } %>
+                    <button id="agregar" class="agregar">Agregar al carrito</button>
+                </div>
+            <% }) %>
+        </section>
+    </main>
+    <footer>
+        <p>Hecho por Santino Fernandez</p>
+    </footer>
+</body>
+
+</html>

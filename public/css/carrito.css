@@ -1,0 +1,60 @@
+#productos-container {
+    width: 500px;
+    margin: auto;
+
+
+}
+
+
+
+.tarjeta-producto {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+}
+
+.tarjeta-producto img {
+    height: 100px;
+    aspect-ratio: 1.5;
+
+
+}
+
+.tarjeta-producto h4 {
+    width: 130px;
+
+}
+
+
+
+
+
+#totales,
+#carrito-vacio {
+    text-align: center;
+
+
+}
+
+div button {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+#menos {
+    position: relative;
+    gap: 20px;
+    right: 29px;
+    left: -40px;
+    top: 20px;
+}
+
+#mas {
+    position: relative;
+    gap: 20px;
+    right: 10px;
+    left: 29px;
+    bottom: 24px;
+}
